@@ -371,12 +371,12 @@ int android_user_init()
     log_boot("hook __NR_openat rc: %d\n", rc);
     ret |= rc;
 
-    unsigned long input_handle_event_addr = patch_config->input_handle_event;
-    if (input_handle_event_addr) {
-        rc = hook_wrap4((void *)input_handle_event_addr, before_input_handle_event, 0, 0);
-        ret |= rc;
-        log_boot("hook input_handle_event rc: %d\n", rc);
-    }
+    // unsigned long input_handle_event_addr = patch_config->input_handle_event;
+    // if (input_handle_event_addr) {
+    //     rc = hook_wrap4((void *)input_handle_event_addr, before_input_handle_event, 0, 0);
+    //     ret |= rc;
+    //     log_boot("hook input_handle_event rc: %d\n", rc);
+    // }
 
     return ret;
 }
